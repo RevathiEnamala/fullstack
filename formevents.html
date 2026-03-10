@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h3>Basic Form Events</h3>
+    
+    <form id="myForm">
+        <input type="text" id="nameInput" placeholder="Enter name">
+        <p id="status">Status: Waiting...</p>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const inputField = document.getElementById("nameInput");
+        const statusText = document.getElementById("status");
+        const form = document.getElementById("myForm");
+
+        inputField.onfocus = function() {
+            statusText.innerText = "Status: Typing...";
+            this.style.backgroundColor = "lightcyan";
+        };
+
+        
+        inputField.onblur = function() {
+            statusText.innerText = "Status: Input Lost Focus";
+            this.style.backgroundColor = "white";
+        };
+
+        inputField.oninput = function() {
+            console.log("Current value: " + this.value);
+        };
+
+        
+        form.onsubmit = function(event) {
+            event.preventDefault(); // Stops page from refreshing
+            alert("Form processed for: " + inputField.value);
+        };
+    </script>
+
+</body>
+</html>

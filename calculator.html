@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator </title>
+    <style>
+    
+        body { font-family: sans-serif; display: flex; justify-content: center; background-color: #a386d1; }
+        .container { background: rgb(255, 255, 255); padding: 30px; border-radius: 100px; box-shadow: 0 4px 6px rgba(146, 26, 26, 0.1); width: 300px; text-align: center; }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+        .btn-row { display: flex; justify-content: space-between; margin-top: 10px; }
+        button { width: 22%; padding: 10px; border: none; border-radius: 6px; background: #93aac2; color: rgb(14, 13, 13); cursor: pointer; font-weight: bold; }
+        button:hover { background: #476b8f; }
+        #resultDisplay { margin-top: 20px; padding: 10px; background: #e9ecef; border-radius: 6px; color: #333; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Rev Calc</h2>
+        <input type="number" id="val1" placeholder="First Number">
+        <input type="number" id="val2" placeholder="Second Number">
+        
+        <div class="btn-row">
+            <button onclick="updateUI('+')">+</button>
+            <button onclick="updateUI('-')">-</button>
+            <button onclick="updateUI('*')">×</button>
+            <button onclick="updateUI('/')">÷</button>
+        </div>
+
+        <div id="resultDisplay">Result: --</div>
+    </div>
+
+    <script>
+      
+        function performMath(a, b, symbol) {
+            if (symbol === '+') return a + b;
+            if (symbol === '-') return a - b;
+            if (symbol === '*') return a * b;
+            if (symbol === '/') return b !== 0 ? (a / b).toFixed(2) : "Error (Div by 0)";
+            return 0;
+        }
+
+    
+        function updateUI(operator) {
+           
+            const n1 = Number(document.getElementById('val1').value);
+            const n2 = Number(document.getElementById('val2').value);
+
+            const result = performMath(n1, n2, operator);
+
+        
+            document.getElementById('resultDisplay').innerText = "Result: " + result;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+/* The Parent Container */
+.flex-container {
+    display: flex;          /* Activates Flexbox */
+    
+    /* Horizontal alignment (Main Axis) */
+    justify-content: space-around; 
+    
+    /* Vertical alignment (Cross Axis) */
+    align-items: center;    
+    
+    background-color: #f4f4f4;
+    height: 200px;
+    border: 2px dashed #999;
+}
+
+/* The Child Items */
+.flex-item {
+    background-color: #ff5722;
+    color: white;
+    padding: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 8px;
+    width: 80px;
+    text-align: center;
+}

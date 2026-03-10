@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2>Contact Form</h2>
+
+    <form>
+        <fieldset>
+            <legend>Personal Details</legend>
+
+            <label>Full Name:</label><br>
+            <input type="text" name="fullname" placeholder="Enter name"><br><br>
+
+            <label>Email Address:</label><br>
+            <input type="email" name="email"><br><br>
+            
+            <label>Message:</label><br>
+            <textarea name="message" rows="4" cols="30"></textarea>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Preferences</legend>
+            
+            <label>Subscribe to newsletter?</label>
+            <input type="checkbox" name="subscribe" checked><br><br>
+
+            <label>Contact Method:</label><br>
+            <input type="radio" name="contact" value="email"> Email
+            <input type="radio" name="contact" value="phone"> Phone
+        </fieldset>
+
+        <br>
+
+        <input type="submit" value="Send Data">
+        <input type="reset" value="Clear Form">
+    </form>
+
+</body>
+</html>

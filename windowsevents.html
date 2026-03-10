@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Window Events Demo</title>
+    <style>
+        body { height: 2000px; font-family: sans-serif; transition: 0.5s; }
+        #info-box {
+            position: fixed; top: 10px; left: 10px;
+            background: rgba(0,0,0,0.8); color: white;
+            padding: 15px; border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="info-box">
+        <p id="size-text">Resize the window!</p>
+        <p id="scroll-text">Scroll down!</p>
+    </div>
+
+    <script>
+        // 1. OnLoad: Fires when everything is ready
+        window.onload = function() {
+            alert("Welcome! The page has fully loaded.");
+            updateSize();
+        };
+
+        // 2. OnResize: Track window width and height
+        window.onresize = function() {
+            updateSize();
+        };
+
+        function updateSize() {
+            let w = window.innerWidth;
+            let h = window.innerHeight;
+            document.getElementById("size-text").innerText = `Window: ${w}px x ${h}px`;
+        }
+
+        // 3. OnScroll: Change background when scrolling down
+        window.onscroll = function() {
+            let scrollVal = window.scrollY; // Distance from top
+            document.getElementById("scroll-text").innerText = `Scrolled: ${Math.round(scrollVal)}px`;
+
+            if (scrollVal > 300) {
+                document.body.style.backgroundColor = "lightcoral";
+            } else {
+                document.body.style.backgroundColor = "white";
+            }
+        };
+    </script>
+
+</body>
+</html>

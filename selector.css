@@ -1,0 +1,36 @@
+/* 1. Universal Selector (*) */
+/* Targets every single element on the page */
+* {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* 2. Element (Tag) Selector */
+/* Targets all instances of a specific HTML tag */
+li {
+    font-weight: bold;
+    color: darkblue;
+}
+
+/* 3. ID Selector (#) */
+/* Targets a unique element with a specific ID */
+#main-title {
+    text-align: center;
+    text-decoration: underline;
+    color: darkred;
+}
+
+/* 4. Class Selector (.) */
+/* Targets all elements that share a specific class name */
+.intro-text {
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+/* 5. Grouping Selector (,) */
+/* Applies the same styles to multiple different elements at once */
+h2, footer {
+    background-color: #f0f0f0;
+    border: 1px solid #9b2525;
+    padding: 5px; /* Used here for basic spacing, not layout */
+}

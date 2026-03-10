@@ -1,0 +1,19 @@
+
+.box-example {
+    /* 1. Content: The actual text or images */
+    width: 300px;
+    height: 100px;
+    background-color: lightblue;
+
+    /* 2. Padding: Transparent space inside the box (around the text) */
+    padding: 30px;
+
+    /* 3. Border: The line around the padding and content */
+    border: 10px solid navy;
+
+    /* 4. Margin: Transparent space outside the box (pushes other elements away) */
+    margin: 50px;
+    
+    font-weight: bold;
+    text-align: center;
+}

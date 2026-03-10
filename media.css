@@ -1,0 +1,58 @@
+/* --- Default Styles (Desktop First) --- */
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #2c3e50; /* Dark blue-grey */
+}
+
+.responsive-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    width: 50%;
+}
+
+.status-text::after {
+    content: " You are on a Desktop screen.";
+    font-weight: bold;
+    color: #2980b9;
+}
+
+/* --- Media Query for Tablets (Max width 768px) --- */
+@media (max-width: 768px) {
+    .responsive-card {
+        width: 80%;
+        background-color: #ecf0f1;
+    }
+    
+    .status-text::after {
+        content: " You are on a Tablet screen.";
+        color: #8e44ad;
+    }
+}
+
+/* --- Media Query for Mobile (Max width 480px) --- */
+@media (max-width: 480px) {
+    body {
+        background-color: #e67e22; /* Changes background to Orange */
+    }
+
+    .responsive-card {
+        width: 95%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    .status-text::after {
+        content: " You are on a Mobile screen.";
+        color: #d35400;
+    }
+}

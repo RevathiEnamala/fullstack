@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Multimedia Gallery</title>
+</head>
+<body>
+
+    <h1>Multimedia Demonstration</h1>
+    <p>This page showcases how to embed images, audio, and video.</p>
+
+    <hr>
+
+    <section>
+        <h3>1. Images</h3>
+        <p>Using the <strong>src</strong> (source) and <strong>alt</strong> (alternative text) attributes.</p>
+        
+        <img src="photo.jpg" alt="A beautiful landscape" width="300">
+        
+        <img src="logo.png" alt="Company Logo" width="150">
+        
+        <img src="icon.svg" alt="Vector Icon" width="50">
+    </section>
+
+    <hr>
+
+    <section>
+        <h3>2. Audio Player</h3>
+        <p>This player includes <u>controls</u> and is set to <u>loop</u>.</p>
+        
+        <audio controls loop>
+            <source src="music.mp3" type="audio/mpeg">
+            <source src="music.ogg" type="audio/ogg">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+
+    <hr>
+
+    <section>
+        <h3>3. Video Player</h3>
+        <p>This video is set to <u>autoplay</u> (muted) and <u>loop</u>.</p>
+        
+        <video width="400" controls autoplay loop muted>
+            <source src="movie.mp4" type="video/mp4">
+            <source src="movie.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+</body>
+</html>
