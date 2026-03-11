@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Cool | Budget Navigator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo">TRAVEL<span>COOL</span></div>
+            <nav>
+                <button class="nav-item active" onclick="showSection('home')">Home</button>
+                <button class="nav-item" onclick="showSection('planner')">Trip Planner</button>
+                <button class="nav-item" onclick="showSection('about')">About Us</button>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <section id="home" class="section-view">
+                <div class="hero">
+                    <h1>Explore the World, <br><span class="highlight">Stay on Budget.</span></h1>
+                    <p>Accurate 2026 rates for accommodation, food, and famous spots at your fingertips.</p>
+                    <button class="cta-btn" onclick="showSection('planner')">Start Planning Now</button>
+                </div>
+            </section>
+
+            <section id="planner" class="section-view hidden">
+                <header>
+                    <h1>Find Your Budget Trip</h1>
+                    <div class="search-box">
+                        <input type="text" id="destinationInput" placeholder="Try 'Bangkok', 'Goa', or 'Paris'...">
+                        <button onclick="generatePlan()">Check Rates</button>
+                    </div>
+                </header>
+
+                <div id="planResult" class="hidden">
+                    <div class="top-stats">
+                        <div class="stat-card"><h3>Best Time</h3><p id="bestTime">--</p></div>
+                        <div class="stat-card"><h3>Daily Budget</h3><p id="totalCost">--</p></div>
+                    </div>
+                    <div class="details-grid">
+                        <div class="card"><h3>Stay (Per Night)</h3><ul id="stayList"></ul></div>
+                        <div class="card"><h3>Food (Daily)</h3><ul id="foodList"></ul></div>
+                        <div class="card"><h3>Top Spots</h3><ul id="spotList"></ul></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="about" class="section-view hidden">
+                <div class="about-content">
+                    <h1>About Travel Cool</h1>
+                    <p>We provide real-time 2026 travel data for the smart traveler. Whether you are looking for ₹400 ashrams in Rishikesh or $35 hostels in Paris, our mission is to make global travel accessible to everyone.</p>
+                    <div class="features">
+                        <div class="feat">✨ Accurate Rates</div>
+                        <div class="feat">📅 Best Timings</div>
+                        <div class="feat">🍜 Local Food Costs</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
