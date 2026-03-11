@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Simple Survey Form</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f0f0f0;
+    }
+
+    .box {
+      background: #fff;
+      width: 350px;
+      margin: 40px auto;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+    }
+
+    button {
+      background: blue;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: darkblue;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h3>Student Survey</h3>
+
+    <input type="text" id="name" placeholder="Your Name">
+
+    <select id="course">
+      <option value="">Select Course</option>
+      <option>B.Tech</option>
+      <option>M.Tech</option>
+      <option>MBA</option>
+    </select>
+
+    <select id="rating">
+      <option value="">Rate Our College</option>
+      <option>Excellent</option>
+      <option>Good</option>
+      <option>Average</option>
+      <option>Poor</option>
+    </select>
+
+    <button onclick="saveData()">Submit</button>
+    <button onclick="showData()">Show Saved Data</button>
+
+    <p id="output"></p>
+  </div>
+
+  <script>
+    function saveData() {
+      var name = document.getElementById("name").value;
+      var course = document.getElementById("course").value;
+      var rating = document.getElementById("rating").value;
+
+      if (name === "" || course === "" || rating === "") {
+        alert("Please fill all fields");
+        return;
+      }
+      // Create survey object
+      var survey = {
+        name: name,
+        course: course,
+        rating: rating
+      };
+      // Get existing data or create new array
+      var data = JSON.parse(localStorage.getItem("surveyData")) || [];
+
+      data.push(survey);
+
+      // Store as JSON
+      localStorage.setItem("surveyData", JSON.stringify(data));
+
+      alert("Survey Submitted");
+      document.getElementById("name").value = "";
+      document.getElementById("course").value = "";
+      document.getElementById("rating").value = "";
+    }
+
+    function showData() {
+      var data = JSON.parse(localStorage.getItem("surveyData")) || [];
+      var output = "";
+
+      if (data.length === 0) {
+        output = "No data found";
+      } else {
+        data.forEach(function(item, index) {
+          output += (index + 1) + ". " + item.name + " - " + item.course + " - " + item.rating + "<br>";
+        });
+      }
+      document.getElementById("output").innerHTML = output;
+    }
+  </script>
+
+</body>
+</html>
